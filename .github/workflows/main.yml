@@ -22,4 +22,4 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Run VM build script from repo root
-        run: ./vmbuild.sh
+        run: bash ./vmbuild.sh
