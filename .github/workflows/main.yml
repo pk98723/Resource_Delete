@@ -15,3 +15,8 @@ jobs:
 
       - name: Run VM build script from repo root
         run:  ls -lart
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
