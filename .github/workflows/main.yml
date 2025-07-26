@@ -1,9 +1,7 @@
 name: Deploy Azure VM with Script
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:  # Trigger manually
 
 jobs:
   deploy-vm:
