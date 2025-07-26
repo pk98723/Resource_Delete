@@ -19,3 +19,4 @@ jobs:
       - name: Delete resource group
         run: |
           az group delete --name myrg --yes --no-wait
+          az group delete --name NetworkWatcherRG --yes --no-wait
