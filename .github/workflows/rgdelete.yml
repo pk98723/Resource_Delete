@@ -1,0 +1,21 @@
+name: Delete Azure Resource Group
+
+on:
+  workflow_dispatch:  # Trigger manually
+
+jobs:
+  delete-rg:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Delete resource group
+        run: |
+          az group delete --name myrg --yes --no-wait
