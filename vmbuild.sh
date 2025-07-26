@@ -36,7 +36,7 @@ echo "Creating public ip..."
 az network public-ip create --resource-group "$RESOURCE_GROUP" --name "$PUBLICIP"
 
 echo "Creating nic and attaching to one subnet..."
-az network nic create --resource-group "$RESOURCE_GROUP" --name mynic --vnet-name "$VNET" --subnet mysubnet --network-security-group "$NSG" --public-ip-address "$PUBLICIP"
+az network nic create --resource-group "$RESOURCE_GROUP" --name mynic --vnet-name "$VNET" --subnet "$SUBNET1" --network-security-group "$NSG" --public-ip-address "$PUBLICIP"
 
 echo "Creating VM and attaching nic..."
 az vm create --resource-group "$RESOURCE_GROUP" --name "$VMNAME" --nics "$VMNIC" --image Win2019Datacenter --size Standard_B2ms --admin-username azureuser --admin-password 'P@ssw0rd@2025'
