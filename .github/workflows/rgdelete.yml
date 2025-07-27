@@ -1,7 +1,8 @@
 name: Delete Azure Resource Group
 
 on:
-  workflow_dispatch:  # Trigger manually
+  schedule:
+    - cron: '30 18 * * *'  # Runs at 18:30 UTC every day or 12:00 IST every day
 
 jobs:
   delete-rg:
