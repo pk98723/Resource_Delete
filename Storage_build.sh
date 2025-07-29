@@ -1,6 +1,6 @@
 # Variables
 RESOURCE_GROUP="myrg"
-STORAGE_ACCOUNT_NAME="mystr"
+STORAGE_ACCOUNT_NAME="mystr98723"
 LOCATION="centralindia"
 
 # Create storage account
