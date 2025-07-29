@@ -1,0 +1,23 @@
+name: Deploy Azure Stroage Account with Script
+
+on:
+  workflow_dispatch:  # Trigger manually
+
+jobs:
+  deploy-vm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy Azure Stroage Account with Script
+        run:  ls -lart
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy Azure Stroage Account with Script
+        run: bash ./Storage_build.sh
