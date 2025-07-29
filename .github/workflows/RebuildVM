@@ -1,4 +1,4 @@
-name: Rebuild VM
+name: Rebuild Azure VM with Script
 
 on:
   workflow_dispatch:
@@ -19,5 +19,5 @@ jobs:
       - name: Make script executable
         run: chmod +x ./rebuild-vm.sh
 
-      - name: Run rebuild script
+      - name: Rebuild Azure VM with Script
         run: ./rebuild-vm.sh
