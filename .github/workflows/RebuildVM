@@ -1,4 +1,4 @@
-name: Rebuild Azure VM with Script
+name: Rebuild Azure VM with Scripts
 
 on:
   workflow_dispatch:
