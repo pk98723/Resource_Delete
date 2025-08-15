@@ -1,0 +1,23 @@
+name: Deploy Azure Linux VM with Script
+
+on:
+  workflow_dispatch:  # Trigger manually
+
+jobs:
+  deploy-vm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run VM build script from repo root
+        run:  ls -lart
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Run VM build script from repo root
+        run: bash ./vmbuildlinux.sh
