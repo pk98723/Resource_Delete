@@ -39,7 +39,7 @@ echo "Creating nic and attaching to one subnet..."
 az network nic create --resource-group "$RESOURCE_GROUP" --name mynic --vnet-name "$VNET" --subnet "$SUBNET1" --network-security-group "$NSG" --public-ip-address "$PUBLICIP"
 
 echo "Creating VM and attaching nic..."
-az vm create --resource-group "$RESOURCE_GROUP" --name "$VMNAME" --nics "$VMNIC" --image UbuntuLTS --size Standard_B2ms --admin-username azureuser --admin-password 'P@ssw0rd@2025'
+az vm create --resource-group "$RESOURCE_GROUP" --name "$VMNAME" --nics "$VMNIC" --image Ubuntu2204 --size Standard_B2ms --admin-username azureuser --admin-password 'P@ssw0rd@2025'
 
 echo "List the public created to the VM to login..."
 az vm list-ip-addresses -g "$RESOURCE_GROUP" -n "$VMNAME"
